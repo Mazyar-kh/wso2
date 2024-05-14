@@ -1,31 +1,31 @@
-Configuring WSO2 API Manager to Accept Untrusted Backend Certificates (Development Only)
+# Configuring WSO2 API Manager to Accept Untrusted Backend Certificates (Development Only)
 Important Note: This guide outlines steps to configure WSO2 API Manager (APIM) to accept untrusted backend certificates. This configuration is intended for development or testing environments only and should not be used in production. Using this configuration bypasses security measures and makes your system vulnerable to potential security risks like man-in-the-middle attacks.
 
-Scenario:
+# Scenario:
 
 You have a backend server with a self-signed certificate or a certificate signed by an untrusted Certificate Authority (CA).
 You want to establish a TLS connection between WSO2 APIM and the backend server for secure communication.
 Steps:
 
-Adding Certificate to Backend (Optional):
+# Adding Certificate to Backend (Optional):
 
 If your backend server uses a self-signed certificate, you might need to add it to the trusted certificate store of your system or application that interacts with the backend. Refer to the documentation for your backend server for specific instructions on adding trusted certificates.
 Adjusting WSO2 APIM Configuration (Not Recommended for Production):
 
 Warning: This step weakens security. Proceed only if you understand the risks and are working in a development environment.
 
-Edit the deployment.toml file located at:
-
+# Edit the deployment.toml file located at:
+---
 /home/wso2carbon/wso2am-3.2.0/repository/conf/deployment.toml
-Replace 3.2.0 with the actual version of your WSO2 APIM installation if it's different.
-
-Add the following configuration snippet under the [transport.passthru_https.sender.parameters] section:
-
+---
+# Add the following configuration snippet under the [transport.passthru_https.sender.parameters] section:
+---
 Ini, TOML
 HostnameVerifier = "AllowAll"
+---
 Use code with caution.
 content_copy
-Save the changes to the deployment.toml file.
+# Save the changes to the deployment.toml file.
 
 Restarting WSO2 APIM Container:
 
