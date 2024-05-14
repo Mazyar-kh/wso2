@@ -7,14 +7,14 @@ You have a backend server with a self-signed certificate or a certificate signed
 You want to establish a TLS connection between WSO2 APIM and the backend server for secure communication.
 Steps:
 
-# 1.Adding Certificate to Backend :
+# 1. Adding Certificate to Backend :
 
 <mark style="background-color: #FFFF00">If your backend server uses a self-signed certificate, you might need to add it to the api's > endpoints > general endpoint configuration and add the certificate via ui.</mark>
-# 2.Edit the deployment.toml file located at:
+# 2. Edit the deployment.toml file located at:
 ```
 vim /home/wso2carbon/wso2am-3.2.0/repository/conf/deployment.toml
 ```
-# 3.Add the following configuration snippet on deployment.toml section:
+# 3. Add the following configuration snippet on deployment.toml section:
 ```xml 
 
 [transport.passthru_https.sender.parameters]
@@ -22,7 +22,7 @@ HostnameVerifier = "AllowAll"
 
 ```
 
-# 4.Restarting WSO2 APIM Container:
+# 4. Restarting WSO2 APIM Container:
 
 Restart the container hosting your WSO2 APIM instance. The specific method for restarting the container depends.
 # Expected Outcome:
