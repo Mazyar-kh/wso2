@@ -15,16 +15,16 @@ Adjusting WSO2 APIM Configuration (Not Recommended for Production):
 Warning: This step weakens security. Proceed only if you understand the risks and are working in a development environment.
 
 # Edit the deployment.toml file located at:
----
-/home/wso2carbon/wso2am-3.2.0/repository/conf/deployment.toml
----
+```
+vim /home/wso2carbon/wso2am-3.2.0/repository/conf/deployment.toml
+```
 # Add the following configuration snippet on deployment.toml section:
---- 
+``` 
 
 [transport.passthru_https.sender.parameters]
 HostnameVerifier = "AllowAll"
 
----
+```
 
 # Restarting WSO2 APIM Container:
 
