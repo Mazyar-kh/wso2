@@ -18,16 +18,15 @@ Warning: This step weakens security. Proceed only if you understand the risks an
 ---
 /home/wso2carbon/wso2am-3.2.0/repository/conf/deployment.toml
 ---
-# Add the following configuration snippet under the [transport.passthru_https.sender.parameters] section:
----
-Ini, TOML
-HostnameVerifier = "AllowAll"
----
-Use code with caution.
-content_copy
-# Save the changes to the deployment.toml file.
+# Add the following configuration snippet on deployment.toml section:
+--- 
 
-Restarting WSO2 APIM Container:
+[transport.passthru_https.sender.parameters]
+HostnameVerifier = "AllowAll"
+
+---
+
+# Restarting WSO2 APIM Container:
 
 Restart the container hosting your WSO2 APIM instance. The specific method for restarting the container depends on your containerization platform (e.g., Docker). Refer to the documentation for your platform for instructions on restarting containers.
 Expected Outcome:
