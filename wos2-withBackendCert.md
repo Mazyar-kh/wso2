@@ -16,7 +16,7 @@ If your backend server uses a self-signed certificate, you might need to add it 
 vim /home/wso2carbon/wso2am-3.2.0/repository/conf/deployment.toml
 ```
 # Add the following configuration snippet on deployment.toml section:
-``` 
+```xml 
 
 [transport.passthru_https.sender.parameters]
 HostnameVerifier = "AllowAll"
