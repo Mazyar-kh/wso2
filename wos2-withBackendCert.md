@@ -9,7 +9,7 @@ Steps:
 
 # Adding Certificate to Backend :
 
-If your backend server uses a self-signed certificate, you might need to add it to the api's > endpoins > general endpoint configuration and add the certificate via ui.
+<mark>If your backend server uses a self-signed certificate, you might need to add it to the api's > endpoins > general endpoint configuration and add the certificate via ui.</mark>
 
 # Edit the deployment.toml file located at:
 ```
